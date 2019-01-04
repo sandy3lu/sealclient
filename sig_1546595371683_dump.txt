@@ -1,0 +1,435 @@
+File: G:\boundleCastle\sealclient\sig_1546595371683.asn
+Time: 17:50:10, 01/04/2019
+---------------------------------------------------------------------
+   0 30 54791: SEQUENCE {
+   4 30 54714:   SEQUENCE {
+   8 02    1:     INTEGER 11
+  11 30 54102:     SEQUENCE {
+  15 30 53484:       SEQUENCE {
+  19 30   22:         SEQUENCE {
+  21 16    2:           IA5String 'ES'
+  25 02    1:           INTEGER 11
+  28 16   13:           IA5String 'yunjingit.com'
+            :           }
+  43 16    8:         IA5String '10001000'
+  53 30 1634:         SEQUENCE {
+  57 02    1:           INTEGER 1
+  60 0C   10:           UTF8String 'test stamp'
+  72 30 1570:           SEQUENCE {
+  76 30  518:             SEQUENCE {
+  80 30  429:               SEQUENCE {
+  84 A0    3:                 [0] {
+  86 02    1:                   INTEGER 2
+            :                   }
+  89 02    5:                 INTEGER
+            :                   00 AC F8 FE 7B
+  96 30   10:                 SEQUENCE {
+  98 06    8:                   OBJECT IDENTIFIER '1 2 156 10197 1 501'
+            :                   }
+ 108 30   54:                 SEQUENCE {
+ 110 31   13:                   SET {
+ 112 30   11:                     SEQUENCE {
+ 114 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+ 119 0C    4:                       UTF8String 'root'
+            :                       }
+            :                     }
+ 125 31   17:                   SET {
+ 127 30   15:                     SEQUENCE {
+ 129 06    3:                       OBJECT IDENTIFIER
+            :                         organizationalUnitName (2 5 4 11)
+ 134 0C    8:                       UTF8String 'research'
+            :                       }
+            :                     }
+ 144 31   18:                   SET {
+ 146 30   16:                     SEQUENCE {
+ 148 06    3:                       OBJECT IDENTIFIER
+            :                         organizationName (2 5 4 10)
+ 153 0C    9:                       UTF8String 'yunjing֯'
+            :                       }
+            :                     }
+            :                   }
+ 164 30   30:                 SEQUENCE {
+ 166 17   13:                   UTCTime '181229025149Z'
+ 181 17   13:                   UTCTime '191229025149Z'
+            :                   }
+ 196 30   57:                 SEQUENCE {
+ 198 31   14:                   SET {
+ 200 30   12:                     SEQUENCE {
+ 202 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+ 207 0C    5:                       UTF8String 'user1'
+            :                       }
+            :                     }
+ 214 31   17:                   SET {
+ 216 30   15:                     SEQUENCE {
+ 218 06    3:                       OBJECT IDENTIFIER
+            :                         organizationalUnitName (2 5 4 11)
+ 223 0C    8:                       UTF8String 'research'
+            :                       }
+            :                     }
+ 233 31   20:                   SET {
+ 235 30   18:                     SEQUENCE {
+ 237 06    3:                       OBJECT IDENTIFIER
+            :                         organizationName (2 5 4 10)
+ 242 0C   11:                       UTF8String 'yunjing֯֯'
+            :                       }
+            :                     }
+            :                   }
+ 255 30   89:                 SEQUENCE {
+ 257 30   19:                   SEQUENCE {
+ 259 06    7:                     OBJECT IDENTIFIER
+            :                       ecPublicKey (1 2 840 10045 2 1)
+ 268 06    8:                     OBJECT IDENTIFIER '1 2 156 10197 1 301'
+            :                     }
+ 278 03   66:                   BIT STRING 0 unused bits
+            :                   04 71 00 88 DB 5A B7 3C 8C 3D 65 19 A5 02 65 67
+            :                   E7 41 A4 63 57 3F 94 39 A4 B7 02 E9 08 C9 10 EB
+            :                   39 EE C0 4C 3B 40 E1 39 7F 16 A6 A0 20 61 18 F7
+            :                   D6 89 01 33 30 F8 6C 38 34 EB 53 2D 11 E8 32 CC
+            :                   A2
+            :                   }
+ 346 A3  164:                 [3] {
+ 349 30  161:                   SEQUENCE {
+ 352 30   12:                     SEQUENCE {
+ 354 06    3:                       OBJECT IDENTIFIER
+            :                         basicConstraints (2 5 29 19)
+ 359 01    1:                       BOOLEAN TRUE
+ 362 04    2:                       OCTET STRING
+            :                   30 00
+            :                       }
+ 366 30   98:                     SEQUENCE {
+ 368 06    3:                       OBJECT IDENTIFIER
+            :                         authorityKeyIdentifier (2 5 29 35)
+ 373 04   91:                       OCTET STRING
+            :                   30 59 80 14 A8 AE 7F DE 45 1D A3 78 9E 6B 20 88
+            :                   A7 FF 68 5A 3B 73 8A 1D A1 3A A4 38 30 36 31 0D
+            :                   30 0B 06 03 55 04 03 0C 04 72 6F 6F 74 31 11 30
+            :                   0F 06 03 55 04 0B 0C 08 72 65 73 65 61 72 63 68
+            :                   31 12 30 10 06 03 55 04 0A 0C 09 79 75 6E 6A 69
+            :                   6E 67 D6 AF 82 05 00 84 22 18 B5
+            :                       }
+ 466 30   29:                     SEQUENCE {
+ 468 06    3:                       OBJECT IDENTIFIER
+            :                         subjectKeyIdentifier (2 5 29 14)
+ 473 04   22:                       OCTET STRING
+            :                   04 14 A5 12 97 02 D3 DB 95 21 AD A7 69 75 1B F1
+            :                   60 E4 66 EB 18 2D
+            :                       }
+ 497 30   14:                     SEQUENCE {
+ 499 06    3:                       OBJECT IDENTIFIER keyUsage (2 5 29 15)
+ 504 01    1:                       BOOLEAN TRUE
+ 507 04    4:                       OCTET STRING
+            :                   03 02 07 80
+            :                       }
+            :                     }
+            :                   }
+            :                 }
+ 513 30   10:               SEQUENCE {
+ 515 06    8:                 OBJECT IDENTIFIER '1 2 156 10197 1 501'
+            :                 }
+ 525 03   71:               BIT STRING 0 unused bits
+            :                 30 44 02 20 7B 52 30 53 B3 4B A7 5B 55 BD 53 DC
+            :                 EB 7F 68 03 03 B3 07 0F D8 D1 A7 D2 FD 83 D6 79
+            :                 27 02 11 62 02 20 5D 3F EA A6 F5 FD A8 9B 69 3C
+            :                 A5 3E 51 52 98 44 53 65 FE F6 D4 CE 5F A6 C9 61
+            :                 14 4D 7A 96 BA 7E
+            :               }
+ 598 30  520:             SEQUENCE {
+ 602 30  429:               SEQUENCE {
+ 606 A0    3:                 [0] {
+ 608 02    1:                   INTEGER 2
+            :                   }
+ 611 02    5:                 INTEGER
+            :                   00 EE 94 A5 9B
+ 618 30   10:                 SEQUENCE {
+ 620 06    8:                   OBJECT IDENTIFIER '1 2 156 10197 1 501'
+            :                   }
+ 630 30   54:                 SEQUENCE {
+ 632 31   13:                   SET {
+ 634 30   11:                     SEQUENCE {
+ 636 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+ 641 0C    4:                       UTF8String 'root'
+            :                       }
+            :                     }
+ 647 31   17:                   SET {
+ 649 30   15:                     SEQUENCE {
+ 651 06    3:                       OBJECT IDENTIFIER
+            :                         organizationalUnitName (2 5 4 11)
+ 656 0C    8:                       UTF8String 'research'
+            :                       }
+            :                     }
+ 666 31   18:                   SET {
+ 668 30   16:                     SEQUENCE {
+ 670 06    3:                       OBJECT IDENTIFIER
+            :                         organizationName (2 5 4 10)
+ 675 0C    9:                       UTF8String 'yunjing֯'
+            :                       }
+            :                     }
+            :                   }
+ 686 30   30:                 SEQUENCE {
+ 688 17   13:                   UTCTime '181229025150Z'
+ 703 17   13:                   UTCTime '191229025150Z'
+            :                   }
+ 718 30   57:                 SEQUENCE {
+ 720 31   14:                   SET {
+ 722 30   12:                     SEQUENCE {
+ 724 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+ 729 0C    5:                       UTF8String 'user2'
+            :                       }
+            :                     }
+ 736 31   17:                   SET {
+ 738 30   15:                     SEQUENCE {
+ 740 06    3:                       OBJECT IDENTIFIER
+            :                         organizationalUnitName (2 5 4 11)
+ 745 0C    8:                       UTF8String 'research'
+            :                       }
+            :                     }
+ 755 31   20:                   SET {
+ 757 30   18:                     SEQUENCE {
+ 759 06    3:                       OBJECT IDENTIFIER
+            :                         organizationName (2 5 4 10)
+ 764 0C   11:                       UTF8String 'yunjing֯֯'
+            :                       }
+            :                     }
+            :                   }
+ 777 30   89:                 SEQUENCE {
+ 779 30   19:                   SEQUENCE {
+ 781 06    7:                     OBJECT IDENTIFIER
+            :                       ecPublicKey (1 2 840 10045 2 1)
+ 790 06    8:                     OBJECT IDENTIFIER '1 2 156 10197 1 301'
+            :                     }
+ 800 03   66:                   BIT STRING 0 unused bits
+            :                   04 79 52 1A 41 D0 A3 C7 92 D8 52 05 42 55 E5 48
+            :                   79 FD 80 DA B3 2C 30 51 6E 69 B4 37 5F 0A FD 8F
+            :                   BB 82 9C C5 BC DB 05 A0 97 E4 4A F2 4B AD DA 7A
+            :                   2A FD 87 B1 18 41 D7 2F 6F 71 B6 97 C2 58 64 FE
+            :                   C0
+            :                   }
+ 868 A3  164:                 [3] {
+ 871 30  161:                   SEQUENCE {
+ 874 30   12:                     SEQUENCE {
+ 876 06    3:                       OBJECT IDENTIFIER
+            :                         basicConstraints (2 5 29 19)
+ 881 01    1:                       BOOLEAN TRUE
+ 884 04    2:                       OCTET STRING
+            :                   30 00
+            :                       }
+ 888 30   98:                     SEQUENCE {
+ 890 06    3:                       OBJECT IDENTIFIER
+            :                         authorityKeyIdentifier (2 5 29 35)
+ 895 04   91:                       OCTET STRING
+            :                   30 59 80 14 A8 AE 7F DE 45 1D A3 78 9E 6B 20 88
+            :                   A7 FF 68 5A 3B 73 8A 1D A1 3A A4 38 30 36 31 0D
+            :                   30 0B 06 03 55 04 03 0C 04 72 6F 6F 74 31 11 30
+            :                   0F 06 03 55 04 0B 0C 08 72 65 73 65 61 72 63 68
+            :                   31 12 30 10 06 03 55 04 0A 0C 09 79 75 6E 6A 69
+            :                   6E 67 D6 AF 82 05 00 84 22 18 B5
+            :                       }
+ 988 30   29:                     SEQUENCE {
+ 990 06    3:                       OBJECT IDENTIFIER
+            :                         subjectKeyIdentifier (2 5 29 14)
+ 995 04   22:                       OCTET STRING
+            :                   04 14 B0 87 A9 E4 1D A7 DC 3B EF 0D 88 92 20 D3
+            :                   8B 03 AB 1B 44 29
+            :                       }
+1019 30   14:                     SEQUENCE {
+1021 06    3:                       OBJECT IDENTIFIER keyUsage (2 5 29 15)
+1026 01    1:                       BOOLEAN TRUE
+1029 04    4:                       OCTET STRING
+            :                   03 02 07 80
+            :                       }
+            :                     }
+            :                   }
+            :                 }
+1035 30   10:               SEQUENCE {
+1037 06    8:                 OBJECT IDENTIFIER '1 2 156 10197 1 501'
+            :                 }
+1047 03   73:               BIT STRING 0 unused bits
+            :                 30 46 02 21 00 B4 9D 3D 94 93 7C 68 4F 8E FB F6
+            :                 7B 9D 99 9C 53 42 7B 68 C1 4D 46 B8 C7 2C 35 38
+            :                 E4 F1 EF 95 2C 02 21 00 BD 89 17 55 21 67 20 F7
+            :                 34 F3 80 99 A6 B7 3C 2A 7C 78 7E 7A 15 A5 57 94
+            :                 42 8D 9F 85 F6 16 CB 49
+            :               }
+1122 30  520:             SEQUENCE {
+1126 30  429:               SEQUENCE {
+1130 A0    3:                 [0] {
+1132 02    1:                   INTEGER 2
+            :                   }
+1135 02    5:                 INTEGER
+            :                   00 EC 11 16 B7
+1142 30   10:                 SEQUENCE {
+1144 06    8:                   OBJECT IDENTIFIER '1 2 156 10197 1 501'
+            :                   }
+1154 30   54:                 SEQUENCE {
+1156 31   13:                   SET {
+1158 30   11:                     SEQUENCE {
+1160 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+1165 0C    4:                       UTF8String 'root'
+            :                       }
+            :                     }
+1171 31   17:                   SET {
+1173 30   15:                     SEQUENCE {
+1175 06    3:                       OBJECT IDENTIFIER
+            :                         organizationalUnitName (2 5 4 11)
+1180 0C    8:                       UTF8String 'research'
+            :                       }
+            :                     }
+1190 31   18:                   SET {
+1192 30   16:                     SEQUENCE {
+1194 06    3:                       OBJECT IDENTIFIER
+            :                         organizationName (2 5 4 10)
+1199 0C    9:                       UTF8String 'yunjing֯'
+            :                       }
+            :                     }
+            :                   }
+1210 30   30:                 SEQUENCE {
+1212 17   13:                   UTCTime '181229025150Z'
+1227 17   13:                   UTCTime '191229025150Z'
+            :                   }
+1242 30   57:                 SEQUENCE {
+1244 31   14:                   SET {
+1246 30   12:                     SEQUENCE {
+1248 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+1253 0C    5:                       UTF8String 'user3'
+            :                       }
+            :                     }
+1260 31   17:                   SET {
+1262 30   15:                     SEQUENCE {
+1264 06    3:                       OBJECT IDENTIFIER
+            :                         organizationalUnitName (2 5 4 11)
+1269 0C    8:                       UTF8String 'research'
+            :                       }
+            :                     }
+1279 31   20:                   SET {
+1281 30   18:                     SEQUENCE {
+1283 06    3:                       OBJECT IDENTIFIER
+            :                         organizationName (2 5 4 10)
+1288 0C   11:                       UTF8String 'yunjing֯֯'
+            :                       }
+            :                     }
+            :                   }
+1301 30   89:                 SEQUENCE {
+1303 30   19:                   SEQUENCE {
+1305 06    7:                     OBJECT IDENTIFIER
+            :                       ecPublicKey (1 2 840 10045 2 1)
+1314 06    8:                     OBJECT IDENTIFIER '1 2 156 10197 1 301'
+            :                     }
+1324 03   66:                   BIT STRING 0 unused bits
+            :                   04 FB 96 B7 B9 9F AA 40 8C 8C 52 5E AA 9F 0E 16
+            :                   3D 99 54 60 20 AF 43 60 B4 2B 20 5C 31 F1 24 69
+            :                   1F FC A1 22 E9 85 E7 5C 5A 2B 2D ED 42 21 C6 92
+            :                   06 DC 31 34 1B F2 4E F5 57 30 92 C5 75 6E F4 31
+            :                   EE
+            :                   }
+1392 A3  164:                 [3] {
+1395 30  161:                   SEQUENCE {
+1398 30   12:                     SEQUENCE {
+1400 06    3:                       OBJECT IDENTIFIER
+            :                         basicConstraints (2 5 29 19)
+1405 01    1:                       BOOLEAN TRUE
+1408 04    2:                       OCTET STRING
+            :                   30 00
+            :                       }
+1412 30   98:                     SEQUENCE {
+1414 06    3:                       OBJECT IDENTIFIER
+            :                         authorityKeyIdentifier (2 5 29 35)
+1419 04   91:                       OCTET STRING
+            :                   30 59 80 14 A8 AE 7F DE 45 1D A3 78 9E 6B 20 88
+            :                   A7 FF 68 5A 3B 73 8A 1D A1 3A A4 38 30 36 31 0D
+            :                   30 0B 06 03 55 04 03 0C 04 72 6F 6F 74 31 11 30
+            :                   0F 06 03 55 04 0B 0C 08 72 65 73 65 61 72 63 68
+            :                   31 12 30 10 06 03 55 04 0A 0C 09 79 75 6E 6A 69
+            :                   6E 67 D6 AF 82 05 00 84 22 18 B5
+            :                       }
+1512 30   29:                     SEQUENCE {
+1514 06    3:                       OBJECT IDENTIFIER
+            :                         subjectKeyIdentifier (2 5 29 14)
+1519 04   22:                       OCTET STRING
+            :                   04 14 F0 C3 95 0B 3D F5 F9 B7 46 0E 41 B0 A6 3F
+            :                   2A EE 59 FB 1B 80
+            :                       }
+1543 30   14:                     SEQUENCE {
+1545 06    3:                       OBJECT IDENTIFIER keyUsage (2 5 29 15)
+1550 01    1:                       BOOLEAN TRUE
+1553 04    4:                       OCTET STRING
+            :                   03 02 07 80
+            :                       }
+            :                     }
+            :                   }
+            :                 }
+1559 30   10:               SEQUENCE {
+1561 06    8:                 OBJECT IDENTIFIER '1 2 156 10197 1 501'
+            :                 }
+1571 03   73:               BIT STRING 0 unused bits
+            :                 30 46 02 21 00 FF 5B 63 71 43 B6 C8 3D 39 57 35
+            :                 84 B8 B1 4A 7E 98 DC 06 5C BC 2A 2B AF 54 AC 7D
+            :                 34 52 4D 98 0E 02 21 00 B1 03 7D 0F B5 29 01 C2
+            :                 53 F1 EA DF 07 2C 04 5B CE 6C 70 94 A8 0A EF 6A
+            :                 23 0D 65 93 7E 33 55 DA
+            :               }
+            :             }
+1646 17   13:           UTCTime '181229025150Z'
+1661 17   13:           UTCTime '181229025150Z'
+1676 17   13:           UTCTime '191229025150Z'
+            :           }
+1691 30 51808:         SEQUENCE {
+1695 16    3:           IA5String 'jpg'
+1700 04 51793:           OCTET STRING
+            :             FF D8 FF E0 00 10 4A 46 49 46 00 01 01 01 00 48
+            :             00 48 00 00 FF DB 00 43 00 03 02 02 03 02 02 03
+            :             03 03 03 04 03 03 04 05 08 05 05 04 04 05 0A 07
+            :             07 06 08 0C 0A 0C 0C 0B 0A 0B 0B 0D 0E 12 10 0D
+            :             0E 11 0E 0B 0B 10 16 10 11 13 14 15 15 15 0C 0F
+            :             17 18 16 14 18 12 14 15 14 FF DB 00 43 01 03 04
+            :             04 05 04 05 09 05 05 09 14 0D 0B 0D 14 14 14 14
+            :             14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14
+            :                     [ Another 51665 bytes skipped ]
+53497 02    1:           INTEGER 10
+53500 02    1:           INTEGER 15
+            :           }
+            :         }
+53503 30  610:       SEQUENCE {
+53507 04  522:         OCTET STRING
+            :           30 82 02 06 30 82 01 AB A0 03 02 01 02 02 05 00
+            :           E5 6F 66 1F 30 0A 06 08 2A 81 1C CF 55 01 83 75
+            :           30 36 31 0D 30 0B 06 03 55 04 03 0C 04 72 6F 6F
+            :           74 31 11 30 0F 06 03 55 04 0B 0C 08 72 65 73 65
+            :           61 72 63 68 31 12 30 10 06 03 55 04 0A 0C 09 79
+            :           75 6E 6A 69 6E 67 D6 AF 30 1E 17 0D 31 38 31 32
+            :           32 39 30 32 35 31 35 30 5A 17 0D 31 39 31 32 32
+            :           39 30 32 35 31 35 30 5A 30 37 31 0E 30 0C 06 03
+            :                   [ Another 394 bytes skipped ]
+54033 06    8:         OBJECT IDENTIFIER '1 2 156 10197 1 501'
+54043 03   72:         BIT STRING 0 unused bits
+            :           30 45 02 20 1F D1 B7 91 36 23 75 AA 5C B4 A8 E3
+            :           60 7B 1C 97 30 68 54 FD D7 47 7A 17 4C 4B 1E 24
+            :           64 C4 F2 C8 02 21 00 DA BA 8D 8A 45 88 34 39 AB
+            :           F4 7A 6A 3A EE D2 CA DA 98 C0 20 E2 64 C1 E7 E8
+            :           08 91 F1 9E 4A D4 6C
+            :         }
+            :       }
+54117 03   16:     BIT STRING 0 unused bits
+            :       17 0D 31 39 30 31 30 34 30 39 33 31 34 34 5A
+54135 03   33:     BIT STRING 0 unused bits
+            :       F4 3E 59 64 5E 8E 5E C8 38 4F E0 4B 88 CA 34 64
+            :       F2 27 9D 4D B3 B6 94 C2 DD 76 BA 50 61 A9 CD 71
+54170 16   12:     IA5String 'contents:all'
+54184 04  524:     OCTET STRING
+            :       30 82 02 08 30 82 01 AD A0 03 02 01 02 02 05 00
+            :       EE 94 A5 9B 30 0A 06 08 2A 81 1C CF 55 01 83 75
+            :       30 36 31 0D 30 0B 06 03 55 04 03 0C 04 72 6F 6F
+            :       74 31 11 30 0F 06 03 55 04 0B 0C 08 72 65 73 65
+            :       61 72 63 68 31 12 30 10 06 03 55 04 0A 0C 09 79
+            :       75 6E 6A 69 6E 67 D6 AF 30 1E 17 0D 31 38 31 32
+            :       32 39 30 32 35 31 35 30 5A 17 0D 31 39 31 32 32
+            :       39 30 32 35 31 35 30 5A 30 39 31 0E 30 0C 06 03
+            :               [ Another 396 bytes skipped ]
+54712 06    8:     OBJECT IDENTIFIER '1 2 156 10197 1 501'
+            :     }
+54722 03   71:   BIT STRING 0 unused bits
+            :     30 44 02 20 5D 86 B0 11 D4 0F 2F 12 99 96 6C 87
+            :     C2 8A DA 3C 85 B8 43 6B 4F 18 F1 2F 55 A8 7D E5
+            :     74 B2 5D BA 02 20 41 FF BC 32 C7 DC 74 B1 6E F8
+            :     BE 14 C2 84 2B 0C 9D 4B F1 A4 5D BE 44 7E EA 9E
+            :     14 39 86 22 11 F6
+            :   }

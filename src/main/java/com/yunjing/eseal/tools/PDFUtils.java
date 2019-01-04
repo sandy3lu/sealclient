@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 public class PDFUtils {
 
-    static  byte[] PDF_END = new byte[]{0x45, 0x4f,0x46, 0x0a};
+    static  byte[] PDF_END = new byte[]{0x25,0x25,0x45, 0x4f,0x46};
+    //static  byte[] PDF_END_1 = new byte[]{0x25,0x25,0x45, 0x4f,0x46,0x0d,0x0a};
     static String SIGNATURE_NAME = "yunjing GuoMi";
 
     public static byte[] getBytesFromFile(String filename) throws IOException {
@@ -58,15 +59,21 @@ public class PDFUtils {
     public static byte[] getPDFcontentForSign(byte[] pdf){
 
         int index = ByteIndexOf(pdf,PDF_END);
-        if(index>0){
-            byte[] result = new byte[index +PDF_END.length];
+        if(index >0){
+            int length = index +PDF_END.length;
+            if(pdf.length> length){
+                if(pdf[length] == 0x0a){
+                    length ++;
+                }else{
+                    length = length +2;
+                }
+            }
+            byte[] result = new byte[length];
             System.arraycopy(pdf, 0, result, 0, result.length);
             return result;
-        }else {
-            return null;
         }
 
-
+        return  null;
     }
 
     public static byte[] getSignatures(String src) throws IOException, GeneralSecurityException {
