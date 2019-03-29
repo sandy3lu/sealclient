@@ -1,105 +1,105 @@
 File: G:\boundleCastle\sealclient\sig_1546595371683.asn
 Time: 17:50:10, 01/04/2019
 ---------------------------------------------------------------------
-   0 30 54791: SEQUENCE {
-   4 30 54714:   SEQUENCE {
-   8 02    1:     INTEGER 11
-  11 30 54102:     SEQUENCE {
-  15 30 53484:       SEQUENCE {
-  19 30   22:         SEQUENCE {
-  21 16    2:           IA5String 'ES'
-  25 02    1:           INTEGER 11
-  28 16   13:           IA5String 'yunjingit.com'
+   0 30 54791: SEQUENCE {  // ES_Signature
+   4 30 54714:   SEQUENCE { // toSign TBS_Sign
+   8 02    1:     INTEGER 11  // version INTEGER
+  11 30 54102:     SEQUENCE {  // eseal SESeal
+  15 30 53484:       SEQUENCE {  // esealInfo SES_SealInfo
+  19 30   22:         SEQUENCE {  // SES_Header
+  21 16    2:           IA5String 'ES'   // ID IA5String
+  25 02    1:           INTEGER 11        // version INTEGER
+  28 16   13:           IA5String 'yunjingit.com'  // Vid IA5String
             :           }
-  43 16    8:         IA5String '10001000'
-  53 30 1634:         SEQUENCE {
-  57 02    1:           INTEGER 1
-  60 0C   10:           UTF8String 'test stamp'
-  72 30 1570:           SEQUENCE {
-  76 30  518:             SEQUENCE {
-  80 30  429:               SEQUENCE {
-  84 A0    3:                 [0] {
-  86 02    1:                   INTEGER 2
+  43 16    8:         IA5String '10001000'  // esID IA5String
+  53 30 1634:         SEQUENCE {   // property SES_ESPropertyInfo
+  57 02    1:           INTEGER 1  // type INTEGER
+  60 0C   10:           UTF8String 'test stamp'  // name UTF8String
+  72 30 1570:           SEQUENCE {    // certList SEQUENCE OF cert
+  76 30  518:             SEQUENCE { // cert
+  80 30  429:               SEQUENCE { // tbsCertificate TBSCertificate
+  84 A0    3:                 [0] {  //  version         [0] EXPLICIT Version DEFAULT v1
+  86 02    1:                   INTEGER 2  // version INTEGER
             :                   }
-  89 02    5:                 INTEGER
+  89 02    5:                 INTEGER      // serialNumber CertificateSerialNumber ::= INTEGER
             :                   00 AC F8 FE 7B
-  96 30   10:                 SEQUENCE {
+  96 30   10:                 SEQUENCE {   // signature AlgorithmIdentifier
   98 06    8:                   OBJECT IDENTIFIER '1 2 156 10197 1 501'
             :                   }
- 108 30   54:                 SEQUENCE {
- 110 31   13:                   SET {
- 112 30   11:                     SEQUENCE {
- 114 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
- 119 0C    4:                       UTF8String 'root'
+ 108 30   54:                 SEQUENCE {  // issuer Name := SEQUENCE OF RelativeDistringuishedName
+ 110 31   13:                   SET {   // RelativeDistringuishedName  SET OF AttributeTypeAndValue
+ 112 30   11:                     SEQUENCE { // AttributeTypeAndValue SEQUENCE
+ 114 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)  // type AttributeType  ::= OBJECT IDENTIFIER
+ 119 0C    4:                       UTF8String 'root'						// value AttributeValue ::= 
             :                       }
             :                     }
- 125 31   17:                   SET {
+ 125 31   17:                   SET {   // RelativeDistringuishedName
  127 30   15:                     SEQUENCE {
- 129 06    3:                       OBJECT IDENTIFIER
+ 129 06    3:                       OBJECT IDENTIFIER   // type AttributeType  ::= OBJECT IDENTIFIER
             :                         organizationalUnitName (2 5 4 11)
  134 0C    8:                       UTF8String 'research'
             :                       }
             :                     }
- 144 31   18:                   SET {
+ 144 31   18:                   SET {  // RelativeDistringuishedName
  146 30   16:                     SEQUENCE {
- 148 06    3:                       OBJECT IDENTIFIER
+ 148 06    3:                       OBJECT IDENTIFIER   // type AttributeType  ::= OBJECT IDENTIFIER
             :                         organizationName (2 5 4 10)
  153 0C    9:                       UTF8String 'yunjing֯'
             :                       }
             :                     }
             :                   }
- 164 30   30:                 SEQUENCE {
- 166 17   13:                   UTCTime '181229025149Z'
- 181 17   13:                   UTCTime '191229025149Z'
+ 164 30   30:                 SEQUENCE { // validity Validity
+ 166 17   13:                   UTCTime '181229025149Z'  // not Before Time
+ 181 17   13:                   UTCTime '191229025149Z'  // notAfer Time
             :                   }
- 196 30   57:                 SEQUENCE {
+ 196 30   57:                 SEQUENCE { // subject Name
  198 31   14:                   SET {
  200 30   12:                     SEQUENCE {
- 202 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)
+ 202 06    3:                       OBJECT IDENTIFIER commonName (2 5 4 3)  // type AttributeType  ::= OBJECT IDENTIFIER
  207 0C    5:                       UTF8String 'user1'
             :                       }
             :                     }
  214 31   17:                   SET {
  216 30   15:                     SEQUENCE {
- 218 06    3:                       OBJECT IDENTIFIER
+ 218 06    3:                       OBJECT IDENTIFIER   // type AttributeType  ::= OBJECT IDENTIFIER
             :                         organizationalUnitName (2 5 4 11)
  223 0C    8:                       UTF8String 'research'
             :                       }
             :                     }
  233 31   20:                   SET {
  235 30   18:                     SEQUENCE {
- 237 06    3:                       OBJECT IDENTIFIER
+ 237 06    3:                       OBJECT IDENTIFIER    // type AttributeType  ::= OBJECT IDENTIFIER
             :                         organizationName (2 5 4 10)
  242 0C   11:                       UTF8String 'yunjing֯֯'
             :                       }
             :                     }
             :                   }
- 255 30   89:                 SEQUENCE {
- 257 30   19:                   SEQUENCE {
+ 255 30   89:                 SEQUENCE {  // subjectPublicKeyInfo
+ 257 30   19:                   SEQUENCE {  // algorithm AlgorithmIdentifier
  259 06    7:                     OBJECT IDENTIFIER
             :                       ecPublicKey (1 2 840 10045 2 1)
- 268 06    8:                     OBJECT IDENTIFIER '1 2 156 10197 1 301'
+ 268 06    8:                     OBJECT IDENTIFIER '1 2 156 10197 1 301'  // SM2椭圆曲线公钥密码算法
             :                     }
- 278 03   66:                   BIT STRING 0 unused bits
+ 278 03   66:                   BIT STRING 0 unused bits  // subjectPublicKey BIT STRING
             :                   04 71 00 88 DB 5A B7 3C 8C 3D 65 19 A5 02 65 67
             :                   E7 41 A4 63 57 3F 94 39 A4 B7 02 E9 08 C9 10 EB
             :                   39 EE C0 4C 3B 40 E1 39 7F 16 A6 A0 20 61 18 F7
             :                   D6 89 01 33 30 F8 6C 38 34 EB 53 2D 11 E8 32 CC
             :                   A2
             :                   }
- 346 A3  164:                 [3] {
+ 346 A3  164:                 [3] {  // [3] ExplictExtensions OPTIONAL
  349 30  161:                   SEQUENCE {
- 352 30   12:                     SEQUENCE {
- 354 06    3:                       OBJECT IDENTIFIER
-            :                         basicConstraints (2 5 29 19)
- 359 01    1:                       BOOLEAN TRUE
- 362 04    2:                       OCTET STRING
+ 352 30   12:                     SEQUENCE { // extension 
+ 354 06    3:                       OBJECT IDENTIFIER    // extnID OBJECT IDENTIFIER
+            :                         basicConstraints (2 5 29 19)  
+ 359 01    1:                       BOOLEAN TRUE      // critical BOOLEAN DEFAULT FALSE
+ 362 04    2:                       OCTET STRING	// extnValue OCTET STRING
             :                   30 00
             :                       }
- 366 30   98:                     SEQUENCE {
- 368 06    3:                       OBJECT IDENTIFIER
+ 366 30   98:                     SEQUENCE { // extension 
+ 368 06    3:                       OBJECT IDENTIFIER    //extnID OBJECT IDENTIFIER
             :                         authorityKeyIdentifier (2 5 29 35)
- 373 04   91:                       OCTET STRING
+ 373 04   91:                       OCTET STRING		// extnValue OCTET STRING
             :                   30 59 80 14 A8 AE 7F DE 45 1D A3 78 9E 6B 20 88
             :                   A7 FF 68 5A 3B 73 8A 1D A1 3A A4 38 30 36 31 0D
             :                   30 0B 06 03 55 04 03 0C 04 72 6F 6F 74 31 11 30
@@ -108,32 +108,32 @@ Time: 17:50:10, 01/04/2019
             :                   6E 67 D6 AF 82 05 00 84 22 18 B5
             :                       }
  466 30   29:                     SEQUENCE {
- 468 06    3:                       OBJECT IDENTIFIER
+ 468 06    3:                       OBJECT IDENTIFIER  //extnID OBJECT IDENTIFIER
             :                         subjectKeyIdentifier (2 5 29 14)
- 473 04   22:                       OCTET STRING
+ 473 04   22:                       OCTET STRING 		// extnValue OCTET STRING
             :                   04 14 A5 12 97 02 D3 DB 95 21 AD A7 69 75 1B F1
             :                   60 E4 66 EB 18 2D
             :                       }
  497 30   14:                     SEQUENCE {
- 499 06    3:                       OBJECT IDENTIFIER keyUsage (2 5 29 15)
- 504 01    1:                       BOOLEAN TRUE
- 507 04    4:                       OCTET STRING
+ 499 06    3:                       OBJECT IDENTIFIER keyUsage (2 5 29 15)  //extnID OBJECT IDENTIFIER
+ 504 01    1:                       BOOLEAN TRUE							// critical BOOLEAN DEFAULT FALSE
+ 507 04    4:                       OCTET STRING							// extnValue OCTET STRING
             :                   03 02 07 80
             :                       }
             :                     }
             :                   }
             :                 }
- 513 30   10:               SEQUENCE {
- 515 06    8:                 OBJECT IDENTIFIER '1 2 156 10197 1 501'
+ 513 30   10:               SEQUENCE { // signatureAlgorithm AlgorithmIdentifier
+ 515 06    8:                 OBJECT IDENTIFIER '1 2 156 10197 1 501'  // algorithm OBJECT IDENTIFIER
             :                 }
- 525 03   71:               BIT STRING 0 unused bits
+ 525 03   71:               BIT STRING 0 unused bits  // signatureValue BIT STRING
             :                 30 44 02 20 7B 52 30 53 B3 4B A7 5B 55 BD 53 DC
             :                 EB 7F 68 03 03 B3 07 0F D8 D1 A7 D2 FD 83 D6 79
             :                 27 02 11 62 02 20 5D 3F EA A6 F5 FD A8 9B 69 3C
             :                 A5 3E 51 52 98 44 53 65 FE F6 D4 CE 5F A6 C9 61
             :                 14 4D 7A 96 BA 7E
             :               }
- 598 30  520:             SEQUENCE {
+ 598 30  520:             SEQUENCE {  // cert
  602 30  429:               SEQUENCE {
  606 A0    3:                 [0] {
  608 02    1:                   INTEGER 2
@@ -250,7 +250,7 @@ Time: 17:50:10, 01/04/2019
             :                 34 F3 80 99 A6 B7 3C 2A 7C 78 7E 7A 15 A5 57 94
             :                 42 8D 9F 85 F6 16 CB 49
             :               }
-1122 30  520:             SEQUENCE {
+1122 30  520:             SEQUENCE { // cert
 1126 30  429:               SEQUENCE {
 1130 A0    3:                 [0] {
 1132 02    1:                   INTEGER 2
@@ -368,13 +368,13 @@ Time: 17:50:10, 01/04/2019
             :                 23 0D 65 93 7E 33 55 DA
             :               }
             :             }
-1646 17   13:           UTCTime '181229025150Z'
-1661 17   13:           UTCTime '181229025150Z'
-1676 17   13:           UTCTime '191229025150Z'
+1646 17   13:           UTCTime '181229025150Z'  // createDate UTCTime
+1661 17   13:           UTCTime '181229025150Z'  // validStart UTCTime
+1676 17   13:           UTCTime '191229025150Z'  // validEnd UTCTime
             :           }
-1691 30 51808:         SEQUENCE {
-1695 16    3:           IA5String 'jpg'
-1700 04 51793:           OCTET STRING
+1691 30 51808:         SEQUENCE {  // picture SES_ESPictureInfo
+1695 16    3:           IA5String 'jpg'  // type IA5String
+1700 04 51793:           OCTET STRING    // data OCTET STRING
             :             FF D8 FF E0 00 10 4A 46 49 46 00 01 01 01 00 48
             :             00 48 00 00 FF DB 00 43 00 03 02 02 03 02 02 03
             :             03 03 03 04 03 03 04 05 08 05 05 04 04 05 0A 07
@@ -384,12 +384,12 @@ Time: 17:50:10, 01/04/2019
             :             04 05 04 05 09 05 05 09 14 0D 0B 0D 14 14 14 14
             :             14 14 14 14 14 14 14 14 14 14 14 14 14 14 14 14
             :                     [ Another 51665 bytes skipped ]
-53497 02    1:           INTEGER 10
-53500 02    1:           INTEGER 15
-            :           }
+53497 02    1:           INTEGER 10  // width INTEGER
+53500 02    1:           INTEGER 15  // height INTEGER
+            :           }  // extDatas Explict ExtensionDatas OPTIONAL
             :         }
-53503 30  610:       SEQUENCE {
-53507 04  522:         OCTET STRING
+53503 30  610:       SEQUENCE { // signInfo SES_SignInfo
+53507 04  522:         OCTET STRING   // cert OCTET STRING
             :           30 82 02 06 30 82 01 AB A0 03 02 01 02 02 05 00
             :           E5 6F 66 1F 30 0A 06 08 2A 81 1C CF 55 01 83 75
             :           30 36 31 0D 30 0B 06 03 55 04 03 0C 04 72 6F 6F
@@ -399,8 +399,8 @@ Time: 17:50:10, 01/04/2019
             :           32 39 30 32 35 31 35 30 5A 17 0D 31 39 31 32 32
             :           39 30 32 35 31 35 30 5A 30 37 31 0E 30 0C 06 03
             :                   [ Another 394 bytes skipped ]
-54033 06    8:         OBJECT IDENTIFIER '1 2 156 10197 1 501'
-54043 03   72:         BIT STRING 0 unused bits
+54033 06    8:         OBJECT IDENTIFIER '1 2 156 10197 1 501'   // signatureAlgorithm OBJECT IDENTIFIER
+54043 03   72:         BIT STRING 0 unused bits   // signData BIT STRING
             :           30 45 02 20 1F D1 B7 91 36 23 75 AA 5C B4 A8 E3
             :           60 7B 1C 97 30 68 54 FD D7 47 7A 17 4C 4B 1E 24
             :           64 C4 F2 C8 02 21 00 DA BA 8D 8A 45 88 34 39 AB
@@ -408,13 +408,13 @@ Time: 17:50:10, 01/04/2019
             :           08 91 F1 9E 4A D4 6C
             :         }
             :       }
-54117 03   16:     BIT STRING 0 unused bits
+54117 03   16:     BIT STRING 0 unused bits  // timeInfo BIT STRING
             :       17 0D 31 39 30 31 30 34 30 39 33 31 34 34 5A
-54135 03   33:     BIT STRING 0 unused bits
+54135 03   33:     BIT STRING 0 unused bits  // dataHash BIT STRING
             :       F4 3E 59 64 5E 8E 5E C8 38 4F E0 4B 88 CA 34 64
             :       F2 27 9D 4D B3 B6 94 C2 DD 76 BA 50 61 A9 CD 71
-54170 16   12:     IA5String 'contents:all'
-54184 04  524:     OCTET STRING
+54170 16   12:     IA5String 'contents:all'  // propertyInfo IA5String
+54184 04  524:     OCTET STRING                // cert OCTET STRING
             :       30 82 02 08 30 82 01 AD A0 03 02 01 02 02 05 00
             :       EE 94 A5 9B 30 0A 06 08 2A 81 1C CF 55 01 83 75
             :       30 36 31 0D 30 0B 06 03 55 04 03 0C 04 72 6F 6F
@@ -424,9 +424,9 @@ Time: 17:50:10, 01/04/2019
             :       32 39 30 32 35 31 35 30 5A 17 0D 31 39 31 32 32
             :       39 30 32 35 31 35 30 5A 30 39 31 0E 30 0C 06 03
             :               [ Another 396 bytes skipped ]
-54712 06    8:     OBJECT IDENTIFIER '1 2 156 10197 1 501'
+54712 06    8:     OBJECT IDENTIFIER '1 2 156 10197 1 501'  // signatureAlgorithm OBJECT IDENTIFIER 基于SM2和SM3的签名
             :     }
-54722 03   71:   BIT STRING 0 unused bits
+54722 03   71:   BIT STRING 0 unused bits   // signature BIT STRING
             :     30 44 02 20 5D 86 B0 11 D4 0F 2F 12 99 96 6C 87
             :     C2 8A DA 3C 85 B8 43 6B 4F 18 F1 2F 55 A8 7D E5
             :     74 B2 5D BA 02 20 41 FF BC 32 C7 DC 74 B1 6E F8

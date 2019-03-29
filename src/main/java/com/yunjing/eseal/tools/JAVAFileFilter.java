@@ -12,7 +12,7 @@ public class JAVAFileFilter extends FileFilter {
             this.ext = ext;
         }
 
-
+        @Override
         public boolean accept(File file) {
             if (file.isDirectory()) {
                 return true;
@@ -23,17 +23,16 @@ public class JAVAFileFilter extends FileFilter {
 
                 String extension = fileName.substring(index + 1).toLowerCase();
 
-                if (extension.toLowerCase().equals(ext))
+                if (extension.toLowerCase().equals(ext)) {
                     return true;
+                }
             }
             return false;
         }
 
-
+        @Override
         public String getDescription() {
-
                 return "(*." + ext +")";
-
         }
     }
 

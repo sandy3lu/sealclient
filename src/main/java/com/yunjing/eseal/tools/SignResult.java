@@ -1,10 +1,7 @@
 package com.yunjing.eseal.tools;
 
-import com.itextpdf.text.pdf.PdfWriter;
-
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
 
@@ -61,9 +58,8 @@ public class SignResult {
         File f = new File(fileName_ori);
         if(f.exists()){
             Date date = new Date();
-            index = fileName_ori.toLowerCase().indexOf(".pdf");
-            fileName_ori = fileName_ori.substring(0,index) + date.getTime() + "_signed.pdf";
-
+            index = fileName.toLowerCase().indexOf(".pdf");
+            fileName_ori = fileName.substring(0,index) + date.getTime() + "_signed.pdf";
         }
         try {
             FileOutputStream fw = new FileOutputStream(fileName_ori);
