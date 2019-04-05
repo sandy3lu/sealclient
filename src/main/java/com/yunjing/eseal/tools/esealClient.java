@@ -127,7 +127,7 @@ public class esealClient {
                     JOptionPane.showMessageDialog(null, "ip is missing");
                     return;
                 }
-                String url = "http://"+textField_ip.getText().trim()+"/sealcenter/entities/v1.0/signature";
+                String url = "http://"+textField_ip.getText().trim()+"/sealcenter/entities/v1.0/pdf/signature";
 
                 if(textField_keypin.getText().trim().length()<1){
                     JOptionPane.showMessageDialog(null, "key auth code is missing");
@@ -180,7 +180,7 @@ public class esealClient {
         button_verify.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                String url = "http://"+ textField_ip.getText()+"/sealcenter/entities/v1.0/verification";
+                String url = "http://"+ textField_ip.getText()+"/sealcenter/entities/v1.0/pdf/verification";
                 String param;
 
                 if(total == null){
