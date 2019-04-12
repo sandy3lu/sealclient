@@ -177,6 +177,15 @@
           <orientation value="1"/>
         </properties>
       </component>
+      <component id="3e221" class="javax.swing.JCheckBox" binding="pdfCheckBox">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <selected value="true"/>
+          <text value="PDF盖章"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

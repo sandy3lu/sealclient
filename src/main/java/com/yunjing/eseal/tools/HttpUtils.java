@@ -9,8 +9,8 @@ import java.util.Map;
 public class HttpUtils {
 
     public static String sendPostJson(String url_param, String jsonparam) {
-        String result = "";// 返回的结果
-        BufferedReader in = null;// 读取响应输入流
+        String result = "";
+        BufferedReader in = null;
 
         try {
             // 创建URL对象

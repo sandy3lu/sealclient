@@ -22,7 +22,9 @@ public class esealClient {
     byte[] sig;
     byte[] total;
 
-
+    private static String SIGN="/sealcenter/entities/v1.0/pdf/signature";
+    private static String VERIFY="/sealcenter/entities/v1.0/pdf/verification";
+    private static String VERIFY_SEPARATE="/sealcenter/entities/v1.0/document/verification";
     public esealClient() {
 
         button_cert.addMouseListener(new MouseAdapter() {
@@ -127,7 +129,6 @@ public class esealClient {
                     JOptionPane.showMessageDialog(null, "ip is missing");
                     return;
                 }
-                String url = "http://"+textField_ip.getText().trim()+"/sealcenter/entities/v1.0/pdf/signature";
 
                 if(textField_keypin.getText().trim().length()<1){
                     JOptionPane.showMessageDialog(null, "key auth code is missing");
@@ -145,7 +146,7 @@ public class esealClient {
                 org.bouncycastle.asn1.x509.Certificate cert = OtherUtils.parseCert(textField_cert.getText().trim());
                 if(cert!=null) {
                     try {
-                        sealSignInput.setCert(Base64.getUrlEncoder().encodeToString(cert.getEncoded()));
+                        sealSignInput.setUrlBase64cert(Base64.getUrlEncoder().encodeToString(cert.getEncoded()));
                     }catch (Exception e1){
                         e1.printStackTrace();
                         JOptionPane.showMessageDialog(null, "something wrong with signer cert 's reading");
@@ -162,25 +163,45 @@ public class esealClient {
                 }
 
                 String base64encodedString = Base64.getUrlEncoder().encodeToString(total);
-                sealSignInput.setInData(base64encodedString);
-                Gson gson = new Gson();
-                String result = HttpUtils.sendPostJson(url,gson.toJson( sealSignInput));
+                sealSignInput.setUrlBase64InData(base64encodedString);
 
-                SignResult stu=gson.fromJson(result, SignResult.class);
-                String saved = stu.savePdf(textField_pdf.getText().trim());
-                if(saved.length()>1){
-                    JOptionPane.showMessageDialog(null, "signed pdf file " + saved + " success!");
-                    return;
+                //返回盖了章的pdf
+                if(pdfCheckBox.isSelected()) {
+                    sealSignInput.setSealPDF(true);
                 }else{
-                    JOptionPane.showMessageDialog(null, "save pdf file failed");
-                    return;
+                    sealSignInput.setSealPDF(false);
+                }
+
+                Gson gson = new Gson();
+                String url = "https://"+textField_ip.getText().trim()+ SIGN;
+                String result = HttpsUtils.sendPostJson(url,gson.toJson( sealSignInput));
+                SignResult stu=gson.fromJson(result, SignResult.class);
+                if(sealSignInput.isSealPDF()) {
+                    String saved = stu.savePdf(textField_pdf.getText().trim());
+                    if (saved.length() > 1) {
+                        JOptionPane.showMessageDialog(null, "signed pdf file " + saved + " success!");
+                        return;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "save pdf file failed");
+                        return;
+                    }
+                }else{
+                    //保存签章sig
+                    String saved = stu.saveSig(textField_pdf.getText().trim());
+                    if (saved.length() > 1) {
+                        JOptionPane.showMessageDialog(null, "signature file " + saved + " success!");
+                        return;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "save signature file failed");
+                        return;
+                    }
                 }
             }
         });
         button_verify.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                String url = "http://"+ textField_ip.getText()+"/sealcenter/entities/v1.0/pdf/verification";
+                String url = "http://"+ textField_ip.getText()+ VERIFY;
                 String param;
 
                 if(total == null){
@@ -189,7 +210,7 @@ public class esealClient {
                 }
 
                 String base64encodedString = Base64.getUrlEncoder().encodeToString(total);
-                param = "inData=" + base64encodedString;
+                param = "signedPDF=" + base64encodedString;
                 String result = HttpUtils.sendPost(url,param);
                 Gson gson = new Gson();
                 VerifyResult vok = gson.fromJson(result,VerifyResult.class);
@@ -272,6 +293,7 @@ public class esealClient {
     private JTextField textField_hash;
     private JButton exportSignatureButton;
     private JButton pingButton;
+    private JCheckBox pdfCheckBox;
 
 
 }

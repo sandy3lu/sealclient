@@ -7,7 +7,17 @@ public class SealSignInput {
 
 
     int signMethod;
-    String cert;
+    /** URL Base64 编码的证书 */
+    String urlBase64cert;
+
+    /** 用户的访问token */
     String token;
-    String inData;
+
+    /** URL Base64 编码的文件 */
+    String urlBase64InData;
+
+    /**
+     *  是否盖在pdf上,false不盖，返回值中只包括签章数据
+     * */
+    boolean sealPDF=false;
 }
