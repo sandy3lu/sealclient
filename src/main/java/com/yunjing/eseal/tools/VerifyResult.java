@@ -7,4 +7,6 @@ public class VerifyResult {
 
     String msg;
     int code;
+    boolean verify;
+    String reason;
 }

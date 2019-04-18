@@ -156,7 +156,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="127.0.0.1:8080"/>
+          <text value="192.168.20.160:9004"/>
         </properties>
       </component>
       <component id="c1746" class="javax.swing.JButton" binding="pingButton" default-binding="true">
@@ -184,6 +184,31 @@
         <properties>
           <selected value="true"/>
           <text value="PDF盖章"/>
+        </properties>
+      </component>
+      <component id="db09b" class="javax.swing.JButton" binding="sig_asn1Button">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <text value="sig_asn1..."/>
+        </properties>
+      </component>
+      <component id="19019" class="javax.swing.JTextField" binding="textField_sig">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="97e92" class="javax.swing.JCheckBox" binding="seperate">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="分离验证"/>
         </properties>
       </component>
     </children>

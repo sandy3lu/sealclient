@@ -1,99 +1,45 @@
 package com.yunjing.eseal.tools;
 
 import com.itextpdf.text.pdf.*;
-
 import java.io.*;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
-
+import java.util.Arrays;
 
 public class PDFUtils {
-
-    static  byte[] PDF_END = new byte[]{0x25,0x25,0x45, 0x4f,0x46};
-    //static  byte[] PDF_END_1 = new byte[]{0x25,0x25,0x45, 0x4f,0x46,0x0d,0x0a};
     static String SIGNATURE_NAME = "yunjing GuoMi";
-
-    public static byte[] getBytesFromFile(String filename) throws IOException {
-        FileInputStream fis=new FileInputStream(filename);
-        ByteArrayOutputStream baos=new ByteArrayOutputStream();
-        int thebyte=0;
-        while((thebyte=fis.read())!=-1)
-        {
-            baos.write(thebyte);
-        }
-        fis.close();
-        byte[] contents=baos.toByteArray();
-        baos.close();
-        return contents;
-    }
-
-    private static int ByteIndexOf(byte[] srcBytes, byte[] searchBytes)
-    {
-        if (srcBytes == null) { return -1; }
-        if (searchBytes == null) { return -1; }
-        if (srcBytes.length == 0) { return -1; }
-        if (searchBytes.length == 0) { return -1; }
-        if (srcBytes.length < searchBytes.length) { return -1; }
-        for (int i = 0; i <= srcBytes.length - searchBytes.length; i++)
-        {
-            if (srcBytes[i] == searchBytes[0])
-            {
-                //System.out.printf("%d: %d %d %d %d\n",i, srcBytes[i],srcBytes[i+1],srcBytes[i+2],srcBytes[i+3]);
-                if (searchBytes.length == 1) { return i; }
-                boolean flag = true;
-                for (int j = 1; j < searchBytes.length; j++)
-                {
-                    if (srcBytes[i + j] != searchBytes[j])
-                    {
-                        flag = false;
-                        break;
-                    }
-                }
-                if (flag) { return i; }
-            }
-        }
-        return -1;
-    }
-
-
-    public static byte[] getPDFcontentForSign(byte[] pdf){
-
-        int index = ByteIndexOf(pdf,PDF_END);
-        if(index >0){
-            int length = index +PDF_END.length;
-            if(pdf.length> length){
-                if(pdf[length] == 0x0a){
-                    length ++;
-                }else{
-                    length = length +2;
-                }
-            }
-            byte[] result = new byte[length];
-            System.arraycopy(pdf, 0, result, 0, result.length);
-            return result;
-        }
-
-        return  null;
-    }
 
     public static byte[] getSignatures(String src) throws IOException, GeneralSecurityException {
         PdfReader reader = new PdfReader(src);
-
         AcroFields fields = reader.getAcroFields();
-
         ArrayList<String> names = fields.getSignatureNames();
         for (String name : names) {
-
                 if(name.contains(SIGNATURE_NAME)){
                     PdfDictionary dic = fields.getSignatureDictionary(name);
                     PdfString obj = (PdfString)dic.get(PdfName.CONTENTS);
                     byte[] data = obj.getBytes();
                     return data;
                 }
-
-
         }
         return null;
+    }
+
+    public static byte[] getBytesFromFile(String filename)  {
+        try {
+            FileInputStream fis = new FileInputStream(filename);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            int thebyte = 0;
+            while ((thebyte = fis.read()) != -1) {
+                baos.write(thebyte);
+            }
+            fis.close();
+            byte[] contents = baos.toByteArray();
+            baos.close();
+            return contents;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
 
@@ -107,5 +53,26 @@ public class PDFUtils {
             sb.append(hex);
         }
         return sb.toString();
+    }
+
+
+    public static byte[] getPDFcontentForSign(byte[] pdf){
+        try {
+            PdfReader reader = new PdfReader(pdf);
+            AcroFields fields = reader.getAcroFields();
+            ArrayList<String> names = fields.getSignatureNames();
+            for (String name : names) {
+                if (name.contains(SIGNATURE_NAME)) {
+                    PdfDictionary dic = fields.getSignatureDictionary(name);
+                    PdfString obj = (PdfString) dic.get(PdfName.LOCATION);
+                    Integer length = Integer.valueOf(obj.toString());
+                    return Arrays.copyOfRange(pdf,0,length);
+                }
+            }
+            return pdf;
+        }catch (Exception e){
+            return null;
+        }
+
     }
 }
