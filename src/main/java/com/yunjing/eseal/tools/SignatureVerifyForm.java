@@ -7,5 +7,5 @@ public class SignatureVerifyForm {
 
     String ulrBase64Pdf;
 
-    String urlBaseSig;
+    String urlBase64Sig;
 }

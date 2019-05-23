@@ -2,7 +2,6 @@ package com.yunjing.eseal.tools;
 
 import com.google.gson.Gson;
 import org.bouncycastle.asn1.x509.Certificate;
-
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -240,7 +239,7 @@ public class esealClient {
                     form.setUlrBase64Pdf(base64encodedString);
                     byte[] content = PDFUtils.getBytesFromFile(textField_sig.getText().trim());
                     String base64sig = Base64.getUrlEncoder().encodeToString(content);
-                    form.setUrlBaseSig(base64sig);
+                    form.setUrlBase64Sig(base64sig);
                     result = HttpUtils.sendPostJson(url,gson.toJson(form));
                 }else {
                     if(!containSig){
